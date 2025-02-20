@@ -1,38 +1,277 @@
-.App {
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.navbar {
+  background-color: #444;
+  padding: 10px 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.content {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Form Style */
+.search-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.search-label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px; /* Limitáljuk a maximális szélességet */
+  border: 1px solid #7c7c7c;
+  border-radius: 5px;
+  margin-top: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #000000; /* Zöld szegély, ha fókuszálunk a mezőre */
+}
+
+.search-button {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #292929;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+}
+
+/* Táblázat stílusok */
+.halak-lista {
+  margin: 20px;
+  overflow-x: auto; /* Reszponzív görgetés, ha szükséges */
+}
+
+.halak-lista table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.halak-lista th,
+.halak-lista td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.halak-lista th {
+  background-color: #444;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.halak-lista tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+.halak-lista tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.halak-lista tr:hover {
+  background-color: #f1f1f1;
+}
+
+.halak-lista tr:last-child {
+  border-bottom: none;
+}
+
+.halak-lista img {
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Reszponzív táblázat */
+@media (max-width: 768px) {
+  .halak-lista table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .halak-lista th,
+  .halak-lista td {
+    white-space: nowrap;
+  }
+}
+
+.uj-hal,
+.hal-szerkesztes {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.uj-hal form,
+.hal-szerkesztes form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.uj-hal label,
+.hal-szerkesztes label {
+  font-weight: bold;
+}
+
+.uj-hal input,
+.hal-szerkesztes input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.uj-hal button,
+.hal-szerkesztes button {
+  padding: 10px 20px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.uj-hal button:hover,
+.hal-szerkesztes button:hover {
+  background-color: #555;
+}
+
+.uj-hal-gomb {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #444;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.uj-hal-gomb:hover {
+  background-color: #555;
+}
+
+.szerkesztes-gomb,
+.torles-gomb {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.szerkesztes-gomb {
+  background-color: #4caf50;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.torles-gomb {
+  background-color: #f44336;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.szerkesztes-gomb:hover {
+  background-color: #45a049;
+}
+
+.torles-gomb:hover {
+  background-color: #e53935;
 }

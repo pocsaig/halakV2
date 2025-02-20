@@ -1,0 +1,61 @@
+.halak-lista {
+    margin: 20px;
+    overflow-x: auto;
+  }
+  
+  .halak-lista table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .halak-lista th,
+  .halak-lista td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .halak-lista th {
+    background-color: #444;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
+  
+  .halak-lista tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+  }
+  
+  .halak-lista tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .halak-lista tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .halak-lista img {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .uj-hal-gomb {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .uj-hal-gomb:hover {
+    background-color: #555;
+  }
+  

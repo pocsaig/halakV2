@@ -1,0 +1,40 @@
+.uj-hal {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .uj-hal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .uj-hal label {
+    font-weight: bold;
+  }
+  
+  .uj-hal input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .uj-hal button {
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .uj-hal button:hover {
+    background-color: #555;
+  }
+  
